@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------- */
+.flex-container {
+  height: 400px;
+  display: flex;
+  background: #b9b6b6;
+  justify-content: space-between; /* Works with main axis */
+  align-items: center; /* Works with cross axis */
+}
+
+/* Life before flexbox */
+/* .flex-container::after {
+  content: '';
+  clear: both;
+  display: block;
+} */
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+  /* float: left; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:nth-of-type(1) {
+  align-self: flex-start;
+}
+.item:nth-of-type(2) {
+  align-self: center;
+}
+.item:nth-of-type(3) {
+  align-self: flex-end; /* Align single item on cross axis */
+  align-items: flex-end;
+}
+
+/* ---------------------- */
+.flex-container0 {
+  display: flex;
+  background: #f4f4f4;
+}
+
+.item0 {
+  /* width: 100px; */
+  /* flex-basis is similar to width for flex row-direction - 
+  incase of flex-grow, after this width i.e; 100px, flex will grow will rate of 2,5 and 2 -
+  It is minimun width after which flex-grow is applicable */
+  flex-basis: 100px;
+  /* flex-grow: 1; All items flex will grow at rate of 1 i.e; all screen will be covered with equal width of items */
+  height: 100px;
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+}
+
+.item0:nth-of-type(1) {
+  flex-grow: 2; /* Flex grow at rate of 2 with respect to other items */
+  /* flex-basis: 200px; */
+}
+.item0:nth-of-type(2) {
+  flex-grow: 5; /* Flex grow at rate of 5 with respect to other items */
+}
+.item0:nth-of-type(3) {
+  flex-grow: 2; /* Flex grow at rate of 2 with respect to other items */
+}
+
+/* ---------------------- */
+.flex-container00 {
+  display: flex;
+  background: #f4f4f4;
+}
+
+.item00 {
+  flex-basis: 300px; /* Incase of flex-shrink, it is max-width */
+  height: 100px;
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+}
+
+/* Flex grow at rate of 2 with respect to other items */
+.item00:nth-of-type(1) {
+  flex-shrink: 1;
+}
+.item00:nth-of-type(2) {
+  flex-shrink: 2;
+}
+.item00:nth-of-type(3) {
+  flex-shrink: 3;
+}
+
+/* ---------------------- */
+.flex-container01 {
+  display: flex;
+  background: #f4f4f4;
+}
+
+.item01 {
+  flex: 1 0 0; /* 1st entry is flex-grow, 2nd is flex-shrink, 3rd is flex-basis */
+  height: 100px;
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+}
+
+/* ---------------------- */
+.flex-container1 {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+  /* Works with main axis */
+  justify-content: center;
+  /* Works with cross axis */
+  align-items: end;
+}
+
+.item1 {
+  width: 100px;
+  /* height: 100px; */
+  flex-basis: 100px; /* Similar to height for column-direction */
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+  /* float: left; */
+}
+
+.item1:nth-of-type(1) {
+  order: 2; /* Change order of flex boxes */
+}
+.item1:nth-of-type(2) {
+  order: 1;
+}
+.item1:nth-of-type(3) {
+  order: 3;
+}
+
+/* ---------------------- */
+.flex-container2 {
+  display: flex;
+  background: #cfcece;
+
+  flex-wrap: wrap;
+}
+
+.item2 {
+  width: 100px;
+  height: 100px;
+  background: #254de4;
+  color: #fff;
+  margin: 10px;
+  /* float: left; */
+}

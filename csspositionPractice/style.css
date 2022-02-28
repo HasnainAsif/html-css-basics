@@ -1,0 +1,135 @@
+.parent {
+  background-color: rgb(87, 121, 231);
+  padding: 15px;
+}
+
+.child {
+  padding: 10px;
+}
+
+.child-one {
+  background: lightgreen;
+
+  /* relative is same as static except that element can change itself 
+    relative to top, bottom, right and left elements */
+  position: relative;
+  left: 10px; /* element pushed from left */
+}
+
+.child-two {
+  background: lightgrey;
+  opacity: 0.6;
+
+  position: relative;
+  top: 15px; /* element pushed from top */
+}
+
+.child-three {
+  background: lightyellow;
+}
+
+/* ----------------------------- */
+.parent1 {
+  margin-top: 40px;
+  background-color: rgb(87, 121, 231);
+  padding: 15px;
+}
+
+.child1 {
+  padding: 10px;
+}
+
+.child-one1 {
+  background: lightgreen;
+
+  /* absolute can change its location(position) according to window 
+    if its parent position is static positioned 
+    and by default each element position is static.
+    -- Absolute ignores all the elements and just position itself
+     */
+  position: absolute;
+  top: 310px;
+}
+
+.child-two1 {
+  background: lightgrey;
+}
+
+.child-three1 {
+  background: lightyellow;
+}
+
+/* ----------------------------- */
+.parent2 {
+  margin-top: 40px;
+  background-color: rgb(87, 121, 231);
+  padding: 15px;
+
+  position: relative;
+  /* position: absolute; */
+}
+
+.child2 {
+  padding: 10px;
+}
+
+.child-one2 {
+  background: lightgreen;
+  opacity: 0.6;
+
+  /* absolute can change its location(position) according to its parent 
+    if parent contains some other position than static
+     */
+  position: absolute;
+  top: 0; /* can also write 0px */
+}
+
+.child-two2 {
+  background: lightgrey;
+}
+
+.child-three2 {
+  background: lightyellow;
+}
+
+/* ----------------------------- */
+.parent3 {
+  margin-top: 40px;
+  background-color: rgb(87, 121, 231);
+  padding: 15px;
+
+  position: relative;
+
+  height: 200vh;
+}
+
+.child3 {
+  padding: 10px;
+}
+
+.child-one3 {
+  background: lightgreen;
+  opacity: 0.6;
+
+  /* fixed change its location(position) according to its window always 
+    and ignores parent position
+    -- Fixed is always fixed on screen and moves with page scroll
+     */
+  position: fixed;
+  top: 0; /* can also write 0px */
+  right: 0;
+}
+
+.child-two3 {
+  background: lightgrey;
+}
+
+.child-three3 {
+  background: lightyellow;
+
+  /* Sticky works same as static i.e; it donot move from its location but
+    if we scroll page it get fixed based on top, left, bottom, right parameters
+     */
+  position: sticky;
+  top: 0;
+}
