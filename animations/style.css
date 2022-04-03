@@ -1,0 +1,114 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.parent {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+
+  margin: 5px;
+}
+
+.child {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+
+  /* By default --- transition is set to all
+  transition: all;
+  */
+}
+
+.parent:hover .child {
+  background-color: green;
+  transform: translateX(100%);
+  /* transform: translateX(50px); */
+}
+
+.parent1 {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+
+  margin: 5px;
+}
+
+.child1 {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+
+  /* transition should be always set into base class and not into modified class, until a strict requirement comes in */
+  /* transition : transition-property transition-duration transition-timing-function transition-delay*/
+  transition: transform 2s ease-in 1s;
+  /* in it only transform takes 2 seconds and background-color changes instantly. 
+  By setting "all" into transition-property, background-color will also change in 2 seconds */
+}
+
+.parent1:hover .child1 {
+  background-color: green;
+  transform: translateX(100%);
+}
+
+.parent2 {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+
+  margin: 5px;
+}
+
+.child2 {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+
+  /* transition: transform 1s ease-in; */
+}
+
+.parent2:hover .child2 {
+  /* transform: translateX(100%); */
+
+  /* animation: animation-name animation-duration animation-timing-function animation-fill-mode animation-iteration-count animation-direction animation-delay*/
+  animation: left-to-right 1s ease-in forwards 3 alternate 2s;
+  /* formards means -- after the animation is done, keep all of the animations */
+}
+@keyframes left-to-right {
+  0% {
+    background-color: red;
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateY(100%);
+  }
+  66% {
+    background-color: orange;
+    transform: translateY(100%) translateX(100%);
+  }
+  100% {
+    background-color: green;
+    transform: translateX(100%);
+  }
+}
+
+.parent3 {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+
+  margin: 5px;
+}
+
+.child3 {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+
+  animation: left-to-right 1s ease-in forwards infinite alternate;
+}
+
+.parent3:hover .child3 {
+  animation-play-state: paused;
+}

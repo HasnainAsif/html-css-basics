@@ -60,7 +60,7 @@ section::before {
 
 section::after {
   content: 'This is after content of section tag';
-  color: blueviolet;
+  color: white;
 }
 
 section p {
